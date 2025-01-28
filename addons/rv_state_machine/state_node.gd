@@ -1,4 +1,4 @@
-class_name NodeState
+class_name StateNode
 extends Node
 
 @warning_ignore("unused_signal")

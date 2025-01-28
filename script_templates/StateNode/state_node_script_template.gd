@@ -1,4 +1,4 @@
-extends NodeState
+extends StateNode
 
 
 func _on_process(_delta : float) -> void:

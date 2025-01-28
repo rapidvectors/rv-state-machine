@@ -1,14 +1,14 @@
-class_name NodeStateMachine
+class_name StateMachineNode
 extends Node
 
-@export var initial_node_state : NodeState
+@export var initial_node_state : StateNode
 
 @export_category("Debug State Machine")
 @export var debug_state_physics_process : bool
 @export var debug_state_transition_to : bool
 
 var node_states : Dictionary = {}
-var current_node_state : NodeState
+var current_node_state : StateNode
 var current_node_state_name : String
 var parent_node_name: String
 
@@ -17,7 +17,7 @@ func _ready() -> void:
 	parent_node_name = get_parent().name
 	
 	for child in get_children():
-		if child is NodeState:
+		if child is StateNode:
 			node_states[child.name.to_lower()] = child
 			child.transition.connect(transition_to)
 	
